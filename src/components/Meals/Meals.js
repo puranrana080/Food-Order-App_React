@@ -1,12 +1,11 @@
-import AvailableMeals from "./AvailableMeals"
-const Meals=(props)=>{
-    return (
-        props.meals.map((meal)=>{
-            return <>
-            <AvailableMeals key={meal.id} meal={meal}  />
-            </>
-        })
-    )
-
-}
+import AvailableMeals from "./AvailableMeals";
+import MealsSummary from "./MealsSummary";
+const Meals = (props) => {
+  return (
+    <>
+      <MealsSummary />
+      <AvailableMeals meals={props.meals} />
+    </>
+  );
+};
 export default Meals;

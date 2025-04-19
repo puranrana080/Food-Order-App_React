@@ -1,12 +1,19 @@
+import Card from "../UI/Card";
+import MealItem from "./MealItem/MealItem";
 import classes from "./AvailableMeals.module.css";
 const AvailableMeals = (props) => {
+  const mealsList = props.meals.map((meal) => (
+    <MealItem
+      key={meal.id}
+      name={meal.name}
+      description={meal.description}
+      price={meal.price}
+    />
+  ));
   return (
-    <div className={classes.mainMeal}>
-      <div>{props.meal.name}</div>
-      <div>{props.meal.speciality}</div>
-      <div>${props.meal.price}</div>
-      <hr></hr>
-    </div>
+    <section className={classes.meals}>
+      <Card>{mealsList}</Card>
+    </section>
   );
 };
 export default AvailableMeals;
