@@ -1,5 +1,7 @@
+import {Fragment} from "react"
 import Header from "./components/Layout/Header";
 import Meals from "./components/Meals/Meals";
+import Cart from "./components/Cart/Cart"
 
 function App() {
   const DUMMY_MEALS = [
@@ -30,10 +32,11 @@ function App() {
   ];
 
   return (
-    <>
+    <Fragment>
+      <Cart />
       <Header />
       <Meals meals={DUMMY_MEALS}></Meals>
-    </>
+    </Fragment>
   );
 }
 
